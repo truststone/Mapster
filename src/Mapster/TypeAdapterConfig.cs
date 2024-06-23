@@ -336,7 +336,7 @@ namespace Mapster
         }
 
         private readonly ConcurrentDictionary<TypeTuple, MethodCallExpression> _projectionDict = new ConcurrentDictionary<TypeTuple, MethodCallExpression>();
-        internal Expression<Func<TSource, TDestination>> GetProjectionExpression<TSource, TDestination>()
+        public Expression<Func<TSource, TDestination>> GetProjectionExpression<TSource, TDestination>()
         {
             var del = GetProjectionCallExpression(typeof(TSource), typeof(TDestination));
 
